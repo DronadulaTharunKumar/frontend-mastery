@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 - CSS Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>CSS Cascade & Specificity</h1>
+
+    <!-- Test 1: Specificity -->
+    <section id="specificity-test">
+        <h2 class="special-title">Specificity Test</h2>
+    </section>
+
+    <!-- Test 2: Source Order -->
+    <section>
+        <h2 class="source-test">Source Order Test</h2>
+    </section>
+
+    <!-- Test 3: Inheritance -->
+    <section class="parent">
+        <h2>Inheritance Test</h2>
+        <p>This paragraph inherits the text color.</p>
+    </section>
+
+    <!-- Test 4: Child Selector -->
+    <section class="card">
+        <p>Direct child paragraph</p>
+
+        <div>
+            <p>Nested paragraph</p>
+        </div>
+    </section>
+
+</body>
+</html>
