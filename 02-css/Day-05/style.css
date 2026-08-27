@@ -1,0 +1,54 @@
+body{
+    background-color: #f5f7fa;
+    color: #222222;
+    font-family: Arial, sans-serif;
+
+}
+header{
+    background-color:#2934b5;
+    text-align:center;
+    color:white;
+}
+header img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+}
+nav{
+    background-color:#222222;
+    text-align:center;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    
+}
+h2{
+    color:#2934b5;
+    
+}
+.skill{
+    color:#222222;
+}
+.project{
+    color:#222222;
+}
+h3{
+    color:#2934b5;
+}
+.experience{
+    color:#222222;
+}
+footer{
+    background-color:#222222;
+    text-align:center;
+    color:white;
+}
+footer a{
+    color:white;
+    text-decoration:none;
+}
+#aboutProfile{
+    text-align:center;
+    background-color:antiquewhite;
+}
