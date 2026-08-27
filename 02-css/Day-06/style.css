@@ -1,0 +1,46 @@
+/* =========================
+   TEST 1: SPECIFICITY
+   ========================= */
+
+h2 {
+    color: red;
+}
+
+.special-title {
+    color: blue;
+}
+
+#specificity-test h2 {
+    color: green;
+}
+
+
+/* =========================
+   TEST 2: SOURCE ORDER
+   ========================= */
+
+.source-test {
+    color: orange;
+}
+
+.source-test {
+    color: purple;
+}
+
+
+/* =========================
+   TEST 3: INHERITANCE
+   ========================= */
+
+.parent {
+    color: brown;
+}
+
+
+/* =========================
+   TEST 4: CHILD SELECTOR
+   ========================= */
+
+.card > p {
+    color: blue;
+}
