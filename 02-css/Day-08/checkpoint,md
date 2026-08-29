@@ -1,0 +1,159 @@
+# Day 8 — CSS Display & Positioning
+
+## Interview Checkpoint
+
+### 1. What is the difference between `display: none` and `visibility: hidden`?
+
+`display: none` hides the element and removes it from the document layout, so it does not occupy space.
+
+`visibility: hidden` hides the element but keeps its space in the layout.
+
+---
+
+### 2. What is the difference between `display: block` and `display: inline`?
+
+A block-level element normally starts on a new line and can take the available width.
+
+An inline element normally stays on the same line with other inline content and does not behave like a block element for width and height.
+
+---
+
+### 3. What is `display: inline-block`?
+
+`inline-block` allows an element to remain alongside other inline-level content while still allowing control over properties such as width and height.
+
+---
+
+### 4. What is `position: static`?
+
+`static` is the default position value. The element follows the normal document flow.
+
+---
+
+### 5. What is `position: relative`?
+
+`relative` keeps the element in the normal document flow but allows it to be visually moved relative to its original position using properties such as `top`, `right`, `bottom`, and `left`.
+
+---
+
+### 6. What is `position: absolute`?
+
+`absolute` removes the element from the normal document flow and positions it relative to its nearest positioned ancestor.
+
+---
+
+### 7. Why do we commonly use `position: relative` on a parent and `position: absolute` on a child?
+
+We commonly use this pattern when we want to position the child precisely inside the parent.
+
+```css
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+}
+```
+
+The child can then be positioned relative to the parent.
+
+---
+
+### 8. What is `position: fixed`?
+
+`fixed` removes the element from the normal document flow and positions it relative to the viewport. It remains in that position while the page is scrolled.
+
+---
+
+### 9. What is `position: sticky`?
+
+`sticky` allows an element to behave normally in the document flow until a specified scroll position is reached, after which it sticks within its scrolling context.
+
+It is commonly used for navigation bars and headers.
+
+---
+
+### 10. Does `position: relative` remove an element from normal document flow?
+
+No.
+
+The element remains in the normal document flow, and its original space is preserved.
+
+---
+
+### 11. Does `position: absolute` remove an element from normal document flow?
+
+Yes.
+
+An absolutely positioned element is removed from the normal document flow.
+
+---
+
+### 12. What does this CSS do?
+
+```css
+position: absolute;
+top: 0;
+right: 0;
+```
+
+It positions the element at the top-right of its containing positioning context, usually its nearest positioned ancestor.
+
+---
+
+### 13. What is the difference between `relative` and `absolute`?
+
+`relative` keeps the element in normal document flow and moves it relative to its original position.
+
+`absolute` removes the element from normal document flow and positions it relative to its nearest positioned ancestor.
+
+---
+
+### 14. What is the difference between `fixed` and `sticky`?
+
+`fixed` is positioned relative to the viewport and stays fixed while scrolling.
+
+`sticky` initially behaves as part of the normal document flow and becomes stuck when the specified scroll threshold is reached.
+
+---
+
+### 15. What is the difference between a descendant selector and a child selector?
+
+A descendant selector selects matching elements at any nesting level.
+
+```css
+.card p {
+    color: blue;
+}
+```
+
+A child selector selects only direct children.
+
+```css
+.card > p {
+    color: blue;
+}
+```
+
+---
+
+## 🧪 Practical Work Completed
+
+* Tested `display: block`
+* Tested `display: inline`
+* Tested `display: inline-block`
+* Tested `display: none`
+* Tested `position: relative`
+* Tested `position: absolute`
+* Tested `position: fixed`
+* Tested `position: sticky`
+* Tested parent-relative child positioning
+
+## 🏆 Day 8 Status
+
+* [x] Concepts learned
+* [x] Practical exercises completed
+* [x] Challenge completed
+* [x] Interview checkpoint completed
+* [x] Ready for GitHub
