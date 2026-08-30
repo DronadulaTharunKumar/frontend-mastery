@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+}
+
+header {
+    padding: 30px;
+    text-align: center;
+    background-color: #2934b5;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 15px;
+    background-color: #222;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+h2{
+    text-align: center;
+    color: #2934b5;
+}
+.skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.skill-card{
+   width: 200px;
+   height: 200px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid #2934b5;
+}
+.project-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.project-card {
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid #2934b5;
+}
+
+.about-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.about-image #profile{
+    width: 150px;
+    height: 150px;
+
+}
+
+.about-text {
+    max-width: 1000px;
+    text-align: justify;
+}
