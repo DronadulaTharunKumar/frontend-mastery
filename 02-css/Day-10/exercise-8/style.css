@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #f5f7fa;
+
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+    padding: 25px;
+
+    background-color: #2934b5;
+
+    color: white;
+}
+
+.header-content {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+}
+
+
+/* MAIN */
+
+main {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 30px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section > h2 {
+    text-align: center;
+
+    color: #2934b5;
+
+    margin-bottom: 30px;
+}
+
+
+/* ABOUT */
+
+.about {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    padding: 40px;
+
+    background-color: white;
+}
+
+.about-image img {
+    width: 180px;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 20px;
+}
+
+.skills-grid article {
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: white;
+
+    border: 2px solid #2934b5;
+}
+
+
+/* PROJECTS */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+.project-card {
+    padding: 25px;
+
+    background-color: white;
+
+    border: 2px solid #2934b5;
+}
+
+
+/* CONTACT */
+
+.contact {
+    padding: 30px;
+
+    background-color: white;
+}
+
+.contact-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* BUTTON */
+
+button {
+    padding: 10px 20px;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #222;
+
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .header-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .about {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .contact-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
