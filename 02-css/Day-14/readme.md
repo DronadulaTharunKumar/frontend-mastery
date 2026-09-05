@@ -1,542 +1,350 @@
-# 🚀 Day 14 Mini Project — Developer Learning Landing Page
+## 🚀 Day 14 — CSS Professional Layout & UI Design
 
-Now you will combine **everything you've learned through Day 14** into one small professional webpage.
+Day 13 is complete. Now we move from **learning individual CSS features → combining them to build professional UI**.
 
-The goal is **not to make it huge**. The goal is to prove that you can independently structure and style a responsive UI.
+### 🎯 Day 14 Goal
 
----
+By the end of today, you should be able to build a professional-looking **responsive landing page** using:
 
-## 🎯 Project Goal
-
-Build a landing page for a fictional learning platform called:
-
-**CodePath Academy**
-
-Tagline:
-
-> Learn. Build. Become a Developer.
-
-Your page should look like a **modern developer-learning platform landing page**.
-
----
-
-# 1. Page Structure
-
-Your HTML should contain these sections:
-
-```text
-Header
-   ├── Logo
-   └── Navigation
-
-Hero
-   ├── Label
-   ├── Main heading
-   ├── Description
-   └── Buttons
-       └── Visual/Card
-
-Features
-   ├── Feature Card 1
-   ├── Feature Card 2
-   └── Feature Card 3
-
-Learning Paths
-   ├── Frontend
-   ├── Java Backend
-   └── AI / ML
-
-CTA
-   ├── Heading
-   ├── Description
-   └── Button
-
-Footer
-```
+* CSS variables
+* `clamp()`
+* `min()`, `max()`
+* Professional spacing
+* Typography
+* `max-width` containers
+* CSS architecture
+* Cards and buttons
+* Shadows and borders
+* Responsive layouts
+* Hover/focus states
+* Mobile-first design
 
 ---
 
-# 2. Header Requirements
+# 1. CSS Variables
 
-Create:
+Instead of repeatedly writing the same colors:
 
-```text
-CodePath Academy        Home  Courses  About  Contact
+```css
+color: #2934b5;
+background-color: #2934b5;
+border-color: #2934b5;
 ```
 
-Requirements:
+create reusable variables:
 
-* Use `<header>`
-* Use `<nav>`
-* Use semantic HTML
-* Flexbox
-* Proper spacing
-* Maximum content width
-* Navigation links
-* Hover effect
-* Focus-visible effect
+```css
+:root {
+    --primary-color: #2934b5;
+    --secondary-color: #ffcc00;
+    --text-color: #222;
+    --background-color: #f5f7fa;
+    --white: #ffffff;
+}
+```
+
+Then:
+
+```css
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+```
+
+### Why use variables?
+
+If you later change:
+
+```css
+--primary-color: #2934b5;
+```
+
+to:
+
+```css
+--primary-color: #1d4ed8;
+```
+
+all components using that variable update automatically.
 
 ---
 
-# 3. Hero Section ⭐
+# 2. Professional Container
 
-This is the main section.
+Instead of allowing content to stretch across the entire screen:
 
-### Content
-
-**Label:**
-
-```text
-START YOUR JOURNEY
+```css
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
 ```
 
-**Heading:**
+This is a very common professional layout pattern.
+
+Think:
 
 ```text
-Build Skills. Build Projects. Build Your Career.
+Desktop
+
+| screen                                      |
+|                                             |
+|    |------ 1200px container ------|         |
+|    |                              |         |
+|    |         CONTENT              |         |
+|    |                              |         |
+|    |------------------------------|         |
+|                                             |
 ```
-
-**Description:**
-
-```text
-Learn modern development skills through practical projects
-and become ready for real-world opportunities.
-```
-
-Buttons:
-
-```text
-Start Learning
-Explore Courses
-```
-
-### Layout
-
-Desktop:
-
-```text
-┌─────────────────────────────────────────────────────┐
-│                                                     │
-│  START YOUR JOURNEY             ┌───────────────┐   │
-│                                 │               │   │
-│  Build Skills. Build            │   Developer  │   │
-│  Projects. Build Your Career.   │   Learning   │   │
-│                                 │               │   │
-│  Description                    │   HTML CSS    │   │
-│                                 │   Java JS     │   │
-│  [Start Learning] [Explore]     │               │   │
-│                                 └───────────────┘   │
-│                                                     │
-└─────────────────────────────────────────────────────┘
-```
-
-Use **Flexbox or Grid**.
 
 ---
 
-# 4. Features Section
+# 3. `clamp()`
 
-Create three cards.
+This is an important modern CSS feature.
 
-### Card 1
+```css
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+```
 
-**Practical Learning**
-
-> Learn by building real-world projects.
-
-### Card 2
-
-**Interview Preparation**
-
-> Develop the skills required to crack technical interviews.
-
-### Card 3
-
-**Career Focused**
-
-> Build projects and skills that strengthen your portfolio.
-
-Use:
+It means:
 
 ```text
-CSS Grid
+minimum → preferred → maximum
+  2rem      5vw        4rem
+```
+
+The font can grow/shrink depending on screen size but won't become smaller than `2rem` or larger than `4rem`.
+
+This reduces the need for many media queries.
+
+---
+
+# 4. Professional Spacing
+
+Avoid random values everywhere:
+
+```css
+margin: 17px;
+padding: 23px;
+gap: 19px;
+```
+
+Instead, create a spacing system:
+
+```css
+:root {
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 40px;
+    --space-xxl: 64px;
+}
+```
+
+Then:
+
+```css
+.card {
+    padding: var(--space-lg);
+}
+```
+
+This keeps your UI consistent.
+
+---
+
+# 5. Typography
+
+A professional website needs hierarchy.
+
+```css
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    line-height: 1.6;
+}
+```
+
+Important properties:
+
+```text
+font-family
+font-size
+font-weight
+line-height
+letter-spacing
+text-align
+```
+
+### Very important
+
+Don't focus only on `font-size`.
+
+**`line-height` is extremely important for readability.**
+
+---
+
+# 6. Card Design
+
+A professional card might look like:
+
+```css
+.card {
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+```
+
+Notice:
+
+```text
 padding
 border
 border-radius
 box-shadow
-transition
-:hover
 ```
+
+These four properties are frequently used together.
 
 ---
 
-# 5. Learning Paths Section
+# 7. Button Design
 
-Create three learning-path cards.
-
-### Frontend Development
-
-```text
-HTML
-CSS
-JavaScript
-React
-```
-
-### Java Backend
-
-```text
-Java
-JDBC
-Servlets
-Spring Boot
-SQL
-```
-
-### AI / ML
-
-```text
-Python
-NumPy
-Pandas
-Scikit-learn
-GenAI
-```
-
-**Important:** These are just displayed as learning-path content. Don't implement the technologies themselves.
-
----
-
-# 6. CTA Section
-
-Create a section encouraging the visitor to start learning.
-
-### Heading
-
-```text
-Ready to Start Building?
-```
-
-### Description
-
-```text
-Turn your knowledge into real projects and take the next step in your developer journey.
-```
-
-Button:
-
-```text
-Start Learning
-```
-
-Make this section visually different from the other sections.
-
----
-
-# 7. Footer
-
-Include:
-
-```text
-© 2026 CodePath Academy
-```
-
-You can also add:
-
-```text
-Built with HTML & CSS
-```
-
-Use semantic `<footer>`.
-
----
-
-# 🎨 Design Specification
-
-Use the same design system you've been developing.
-
-### Colors
+Instead of:
 
 ```css
---primary-color: #2934b5;
---secondary-color: #ffcc00;
---background-color: #f5f7fa;
---text-color: #222;
---white: #fff;
---border-color: #ddd;
+button {
+    padding: 10px;
+}
 ```
 
-You can add additional colors if necessary, but **don't create unnecessary colors**.
-
----
-
-# 📏 Spacing System
-
-Use CSS variables:
+create a reusable button:
 
 ```css
---space-small: 8px;
---space-medium: 16px;
---space-large: 24px;
---space-xlarge: 32px;
---space-xxlarge: 48px;
-```
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease,
+                background-color 0.2s ease;
+}
 
-You may add another spacing value if genuinely needed.
+.button:hover {
+    transform: translateY(-2px);
+}
+```
 
 ---
 
-# 🔤 Typography
+# 8. `min()`, `max()` and `clamp()`
 
-Use:
+These three are worth remembering.
+
+### `min()`
+
+Uses the smaller value:
 
 ```css
-font-family: Arial, sans-serif;
+width: min(90%, 1200px);
 ```
 
-Main heading must use:
+Meaning:
+
+> Use 90% of the available width, but never exceed 1200px.
+
+### `max()`
+
+Uses the larger value:
 
 ```css
-clamp()
+padding: max(20px, 5vw);
 ```
 
-For example, your own suitable values such as:
+### `clamp()`
 
-```text
-minimum → preferred → maximum
-```
-
-Don't copy the exact values from Exercise 3.
-
----
-
-# 📱 Responsive Requirements
-
-Your website **must work on:**
-
-```text
-Desktop
-Tablet
-Mobile
-```
-
-Use:
+Keeps a value between minimum and maximum:
 
 ```css
-@media (max-width: 768px)
-```
-
-### Desktop
-
-Header:
-
-```text
-Logo                  Navigation
-```
-
-Hero:
-
-```text
-Content               Visual
-```
-
-Cards:
-
-```text
-Card    Card    Card
-```
-
-### Mobile
-
-Header:
-
-```text
-Logo
-Navigation
-```
-
-Hero:
-
-```text
-Content
-Visual
-```
-
-Cards:
-
-```text
-Card
-Card
-Card
-```
-
-Learning paths:
-
-```text
-Path
-Path
-Path
+font-size: clamp(2rem, 5vw, 4rem);
 ```
 
 ---
 
-# ✨ Interaction Requirements
+# 🧠 Day 14 Exercise 1
 
-Add subtle interactions.
+Create this HTML:
 
-### Navigation
+```html
+<div class="container">
+    <h1>Build Better Websites</h1>
+    <p>
+        Learn modern frontend development and build
+        professional responsive websites.
+    </p>
 
-```text
-:hover
-:focus-visible
+    <a href="#" class="button">Start Learning</a>
+</div>
 ```
 
-### Buttons
+Create CSS using:
 
-```text
-:hover
-:focus-visible
-transition
-translateY()
-```
+### Requirements
 
-### Cards
+1. Create CSS variables for:
 
-```text
-:hover
-transform
-box-shadow
-transition
-```
+   * primary color
+   * secondary color
+   * text color
+   * background color
 
-Keep animations **subtle and professional**.
+2. `.container`
 
----
+   * `max-width`
+   * centered using `margin`
+   * padding
 
-# 🧠 CSS Concepts You Must Use
+3. `h1`
 
-Your project must demonstrate:
+   * use `clamp()`
 
-### Fundamentals
+4. Paragraph
 
-* [ ] CSS variables
-* [ ] Box sizing
-* [ ] Margin
-* [ ] Padding
-* [ ] Colors
-* [ ] Typography
+   * readable `line-height`
 
-### Layout
+5. `.button`
 
-* [ ] Flexbox
-* [ ] CSS Grid
-* [ ] `max-width`
-* [ ] `margin: auto`
-* [ ] `gap`
+   * padding
+   * border-radius
+   * background color
+   * transition
 
-### Responsive CSS
+6. `.button:hover`
 
-* [ ] `%`
-* [ ] `rem`
-* [ ] `vw` or another relative unit
-* [ ] `clamp()`
-* [ ] Media query
+   * change background
+   * slight movement using `translateY()`
 
-### Advanced selectors
+### 🎯 Important
 
-Use at least **two** of:
+**Don't copy my solution.**
 
-```text
-:nth-child()
-:first-child
-:last-child
-:not()
-```
+Write it yourself and send me your **HTML + CSS**.
 
-### Pseudo-elements
-
-Use at least one:
-
-```text
-::before
-::after
-```
-
-### UI
-
-* [ ] Cards
-* [ ] Buttons
-* [ ] Borders
-* [ ] Border-radius
-* [ ] Box-shadow
-* [ ] Hover effects
-* [ ] Focus states
-
----
-
-# 🚫 Restrictions
-
-For this mini-project:
-
-**Do NOT use:**
-
-* ❌ Bootstrap
-* ❌ Tailwind
-* ❌ JavaScript
-* ❌ React
-* ❌ copied templates
-* ❌ AI-generated complete code
-
-You should build it yourself.
-
-You **can use AI after writing your code** to review/debug it — that's the learning workflow we're following:
-
-> **Learn → Write → Test → Review → Fix → Explain**
-
----
-
-# 📁 Required Project Structure
-
-Create:
-
-```text
-day-14-mini-project/
-│
-├── index.html
-├── style.css
-└── README.md
-```
-
-For now, focus on:
-
-```text
-index.html
-style.css
-```
-
-Don't create the README until I review your project.
-
----
-
-## 🏆 Completion Criteria
-
-I'll review your project on:
-
-| Area                       |   Weight |
-| -------------------------- | -------: |
-| HTML structure & semantics |      15% |
-| CSS organization           |      15% |
-| Flexbox/Grid               |      15% |
-| Responsive design          |      15% |
-| CSS variables & spacing    |      10% |
-| Typography & `clamp()`     |      10% |
-| Selectors/pseudo-elements  |       5% |
-| UI/visual quality          |      10% |
-| Accessibility              |       5% |
-| **Total**                  | **100%** |
-
-### Target
-
-**90%+ = Day 14 project complete ✅**
-
-And importantly, **I won't give you the solution upfront**. You build it independently, send me your `index.html` + `style.css`, and I'll review it like a **frontend developer code review + interview assessment**.
+I'll review it like a senior frontend developer and then we'll move to **Exercise 2 → Exercise 3 → Day 14 project → interview checkpoint**.
