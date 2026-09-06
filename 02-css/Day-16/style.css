@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+}
+
+
+/*variables*/
+:root{
+    --primary-color: #2934b5;
+    --secondary-color: #ffcc00;
+    --background-color: #f5f7fa;
+    --text-color: #222;
+    --white: #ffffff;
+    --border-color: #dddddd;
+
+    --radius-small:8px;
+    --radius-medium:16px;
+
+
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-large: 1.5rem;
+    --space-xlarge: 2rem;
+    --space-xxlarge: 2.5rem;
+}
+
+/*global styles*/
+body{
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+h1,h2,h3,h4,h5,h6{
+    line-height:1.2;
+    color:var(--primary-color);
+}
+
+
+/*layout styles*/
+.container{
+    width:min(1200px, 90%);
+    margin:0 auto;
+    padding:var(--space-large);
+}
+.hero-section{
+    padding:var(--space-xxlarge) var(--space-large);
+    background-color:var(--secondary-color);
+}
+.flex{
+    display:flex;
+    gap:var(--space-large);
+}
+
+
+.grid{
+    display:grid;
+    gap:var(--space-large);
+}
+
+
+/*components styles*/
+.button{
+    display:inline-block;
+    padding:var(--space-medium) var(--space-xlarge);
+    background-color:var(--primary-color);
+    color:var(--white);
+    text-decoration:none;
+    border-radius:var(--radius-small);
+    transition:background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+.button:hover{
+    background-color:var(--white);
+    transform:translateY(-3px);
+    color:var(--text-color);
+}
+.button:focus-visible{
+    outline:2px solid var(--text-color);
+    outline-offset:2px;
+}
+.button-primary{
+    background-color:var(--primary-color);
+    color:var(--white);
+}
+.button-secondary{
+    background-color:var(--white);
+    color:var(--text-color);
+}
+
+
+.card{
+    background-color:var(--white);
+    border:1px solid var(--border-color);
+    border-radius:var(--radius-medium);
+    padding:var(--space-large);
+    box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+.card-header{
+    font-size:1.25rem;
+    font-weight:bold;
+    margin-bottom:var(--space-medium);
+}
+.card-body{
+    font-size:1rem;
+    color:var(--text-color);
+}
+.card-footer{
+    margin-top:var(--space-medium);
+    text-align:right;
+}
+
+
+/*utility classes*/
+.text-center{
+    text-align:center;
+}
+
+
+
+
+/*responsive styles*/
+.grid-responsive{
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+}
